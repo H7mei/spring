@@ -1,5 +1,6 @@
 package com.initspring.online.learn_spring_framwork;
 
+import com.initspring.online.learn_spring_framwork.enterprise.MyWebController;
 import com.initspring.online.learn_spring_framwork.game.GameRunner;
 import com.initspring.online.learn_spring_framwork.game.MarioGame;
 import com.initspring.online.learn_spring_framwork.game.PacManGame;
@@ -15,5 +16,8 @@ public class LearnSpringFramworkApplication {
 		ConfigurableApplicationContext context = SpringApplication.run(LearnSpringFramworkApplication.class, args);
 		GameRunner runner = context.getBean(GameRunner.class);
 		runner.run();
+
+		MyWebController app = context.getBean(MyWebController.class);
+		System.out.println(app.returnValueFromBusinessService());
 	}
 }
